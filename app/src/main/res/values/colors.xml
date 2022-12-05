@@ -20,4 +20,6 @@
     <color name="bgColorPrimary">#FFFFFF</color>
     <color name="colorRipple">#E2E2E2</color>
 
+    <color name="line">#fff5f5f5</color>
+
 </resources>

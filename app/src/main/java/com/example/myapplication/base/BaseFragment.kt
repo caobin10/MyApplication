@@ -8,6 +8,10 @@ import androidx.fragment.app.Fragment
 
 open class BaseFragment : Fragment(){
 
+    protected var offset:Int = 0;
+    protected var limit:Int = 20;
+    protected var lazyLoaded = false
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

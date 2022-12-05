@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import com.demo.test.base.BaseViewModel
 import com.demo.test.base.BaseVmActivity
 import com.example.myapplication.common.ScrollToTop
-import com.example.myapplication.ui.Fragment1
+import com.example.myapplication.ui.HomeFragment
 import com.example.myapplication.ui.Fragment2
 import com.example.myapplication.ui.Fragment3
 import com.example.myapplication.ui.Fragment4
@@ -30,7 +30,7 @@ class MainActivity : BaseVmActivity<BaseViewModel>() {
         super.onCreate(savedInstanceState)
 
         fragments = mapOf(
-            R.id.home to createFragment(Fragment1::class.java),
+            R.id.home to createFragment(HomeFragment::class.java),
             R.id.fragment2 to createFragment(Fragment2::class.java),
             R.id.fragment3 to createFragment(Fragment3::class.java),
             R.id.fragment4 to createFragment(Fragment4::class.java)
@@ -63,7 +63,7 @@ class MainActivity : BaseVmActivity<BaseViewModel>() {
         var fragment = supportFragmentManager.fragments.find { it.javaClass == clazz }
         if (fragment == null) {
             fragment = when (clazz) {
-                Fragment1::class.java -> Fragment1.newInstance()
+                HomeFragment::class.java -> HomeFragment.newInstance()
                 Fragment2::class.java -> Fragment2.newInstance()
                 Fragment3::class.java -> Fragment3.newInstance()
                 Fragment4::class.java -> Fragment4.newInstance()

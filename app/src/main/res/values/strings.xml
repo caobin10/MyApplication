@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">MyApplication</string>
+
+    <string name="ic1">测试1</string>
+    <string name="ic2">测试2</string>
+    <string name="ic3">测试3</string>
+    <string name="ic4">测试4</string>
+    <string name="ic5">测试5</string>
+    <string name="ic6">测试6</string>
+    <string name="ic7">测试7</string>
+    <string name="ic8">测试8</string>
+    <string name="ic9">测试9</string>
 </resources>
