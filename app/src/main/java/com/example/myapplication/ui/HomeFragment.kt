@@ -1,6 +1,10 @@
 package com.example.myapplication.ui
 
+import android.content.Context
 import android.view.View
+import android.widget.ImageView
+import android.widget.Toast
+import coil.load
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.OnItemClickListener
 
@@ -8,6 +12,9 @@ import com.example.myapplication.R
 import com.example.myapplication.adapter.HomeRvAdapter
 import com.example.myapplication.base.BaseVmFragment
 import com.example.myapplication.ui.common.CommonViewModel
+import com.youth.banner.BannerConfig
+import com.youth.banner.Transformer
+import com.youth.banner.loader.ImageLoader
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : BaseVmFragment<CommonViewModel>(), OnItemClickListener {
@@ -25,6 +32,7 @@ class HomeFragment : BaseVmFragment<CommonViewModel>(), OnItemClickListener {
     }
 
     override fun initView() {
+        setupBanner()
         rv.adapter = mAdapter
     }
 
@@ -58,5 +66,55 @@ class HomeFragment : BaseVmFragment<CommonViewModel>(), OnItemClickListener {
 
     override fun onItemClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
 
+    }
+
+    /**
+     * 设置轮播图
+     */
+    private fun setupBanner() {
+        val banners = mutableListOf<Int>()
+        banners.add(R.mipmap.banner1)
+        banners.add(R.mipmap.banner2)
+        banners.add(R.mipmap.banner3)
+
+        bannerView.run {
+            //设置内置样式
+            setBannerStyle(BannerConfig.CIRCLE_INDICATOR)
+            //指示器位置
+            setIndicatorGravity(BannerConfig.RIGHT)
+            //设置图片加载器，图片加载器在下方
+            setImageLoader(BannerImageLoader())
+            //设置图片网址或地址的集合
+            setImages(banners)
+            //设置轮播的动画效果
+            setBannerAnimation(Transformer.ZoomOutSlide)
+            //设置轮播图的标题集合
+            //setBannerTitles(titles)
+            //设置轮播间隔时间
+            setDelayTime(3000)
+            start()
+            setOnBannerListener {
+                //图片点击事件
+                val banner = banners[it]
+                when(banner){
+                    R.mipmap.banner1 -> {
+                        Toast.makeText(getActivity(),"hello",Toast.LENGTH_LONG).show()
+                    }
+                    R.mipmap.banner2 -> {
+                        Toast.makeText(getActivity(),"hello",Toast.LENGTH_LONG).show();
+                    }
+                    R.mipmap.banner3 -> {
+                        Toast.makeText(getActivity(),"hello",Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        }
+    }
+
+    class BannerImageLoader: ImageLoader() {
+        override fun displayImage(context: Context, path: Any, imageView: ImageView) {
+            val banner = path as Int
+            imageView.load(banner)
+        }
     }
 }

@@ -1,7 +1,8 @@
-package com.demo.test.base
+package com.example.myapplication.base
 
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
+import com.demo.test.base.BaseViewModel
 
 
 abstract class BaseVmActivity<VM : BaseViewModel> : BaseActivity() {
@@ -27,8 +28,7 @@ abstract class BaseVmActivity<VM : BaseViewModel> : BaseActivity() {
 
     protected abstract fun viewModelClass(): Class<VM>
 
-    open fun initView() {
-        // Override if need
+    open fun initData() {
     }
 
     open fun observe(){

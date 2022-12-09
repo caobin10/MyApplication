@@ -4,7 +4,17 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.youth.banner.Banner
+        android:id="@+id/bannerView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:delay_time="5000"
+        app:is_auto_play="true"
+        app:image_scale_type="fit_xy"
+        app:scroll_time="1500" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.demo.test.base.BaseViewModel
-import com.demo.test.base.BaseVmActivity
+import com.example.myapplication.base.BaseVmActivity
 import com.example.myapplication.common.ScrollToTop
 import com.example.myapplication.ui.HomeFragment
 import com.example.myapplication.ui.Fragment2
