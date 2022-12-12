@@ -44,21 +44,21 @@ abstract class BaseVmCommonActivity : BaseActivity() {
 //    /**
 //     * 起始位
 //     */
-//    protected var offset: Int = 0
+    protected var offset: Int = 0
 //
 //    /**
 //     * 每页加载数
 //     */
-//    protected var limit: Int = 20
+    protected var limit: Int = 20
 //
 //    /**
 //     * 多种状态的 View 的切换
 //     */
-//    protected var mLayoutStatusView: MultipleStatusView? = null
+    protected var mLayoutStatusView: MultipleStatusView? = null
 //
 //
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 //
 //        initViewModel()
 //        observe()
@@ -70,17 +70,17 @@ abstract class BaseVmCommonActivity : BaseActivity() {
 //        // 重新恢复后会自动从ViewModel中的LiveData恢复数据，
 //        // 不需要重新初始化数据。
 //        if (savedInstanceState == null) {
-//            initData()
+            initData()
 //        }
 //
 //        mLayoutStatusView?.setOnClickListener { initData() }
 //
 //        checkUpdate()
-//    }
+    }
 //
-//    open fun initData() {
-//        if (offset == 0) mLayoutStatusView?.showLoading()
-//    }
+    open fun initData() {
+        if (offset == 0) mLayoutStatusView?.showLoading()
+    }
 //
 //    override fun onDestroy() {
 //        super.onDestroy()
