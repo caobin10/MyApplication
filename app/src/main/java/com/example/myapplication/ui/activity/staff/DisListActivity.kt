@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.activity.staff
 
+import com.example.myapplication.R
 import com.example.myapplication.base.BaseVmCommonActivity
 
 class DisListActivity: BaseVmCommonActivity() {

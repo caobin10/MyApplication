@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/dp_8"
+    android:layout_marginLeft="@dimen/dp_8"
+    android:layout_marginRight="@dimen/dp_8"
+    android:padding="@dimen/dp_8"
+    android:elevation="1dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ripple_item_select">
+
+    <ImageView
+        android:id="@+id/iv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/AppTheme.Label.Title"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintStart_toEndOf="@id/iv_name"
+        app:layout_constraintTop_toTopOf="@id/iv_name"
+        app:layout_constraintBottom_toBottomOf="@id/iv_name"
+        android:layout_marginLeft="5dp"
+        tools:text="@string/test_text" />
+
+    <TextView
+        android:id="@+id/survey_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/shape_tv_bg"
+        android:textColor="@color/error_stroke_color"
+        android:textSize="10sp"
+        android:visibility="gone"
+        android:padding="2dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_name"
+        app:layout_constraintTop_toTopOf="@id/tv_name"
+        app:layout_constraintBottom_toBottomOf="@id/tv_name"
+        tools:text="已调查"
+        tools:visibility="visible"
+        android:layout_marginLeft="8dp" />
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/shape_tv_bg"
+        android:textColor="@color/error_stroke_color"
+        android:textSize="10sp"
+        android:visibility="gone"
+        android:padding="2dp"
+        app:layout_constraintStart_toEndOf="@+id/survey_tag"
+        app:layout_constraintTop_toTopOf="@id/tv_name"
+        app:layout_constraintBottom_toBottomOf="@id/tv_name"
+        tools:visibility="visible"
+        android:layout_marginLeft="8dp"
+        tools:text="正常"/>
+
+    <TextView
+        android:id="@+id/tv_update_time"
+        style="@style/AppTheme.Label.Description"
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/textColorThird"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_name"
+        android:layout_marginRight="16dp" />
+
+    <TextView
+        android:id="@+id/tv_value1"
+        style="@style/AppTheme.Label.Description"
+        android:textSize="@dimen/sp_15"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        tools:text="@string/test_text" />
+
+    <TextView
+        android:id="@+id/tv_value2"
+        style="@style/AppTheme.Label.Description"
+        android:textSize="@dimen/sp_15"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_value1"
+        tools:text="@string/test_text" />
+
+    <TextView
+        android:id="@+id/tv_value3"
+        style="@style/AppTheme.Label.Description"
+        android:textSize="@dimen/sp_15"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_value2"
+        tools:text="@string/test_text" />
+
+    <TextView
+        android:id="@+id/tv_value4"
+        style="@style/AppTheme.Label.Description"
+        android:textSize="@dimen/sp_15"
+        android:layout_marginTop="6dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_value3"
+        tools:text="@string/test_text"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

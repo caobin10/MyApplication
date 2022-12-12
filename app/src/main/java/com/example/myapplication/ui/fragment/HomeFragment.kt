@@ -1,6 +1,7 @@
-package com.example.myapplication.ui
+package com.example.myapplication.ui.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
@@ -11,6 +12,7 @@ import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.example.myapplication.R
 import com.example.myapplication.adapter.HomeRvAdapter
 import com.example.myapplication.base.BaseVmFragment
+import com.example.myapplication.ui.activity.staff.DisListActivity
 import com.example.myapplication.ui.common.CommonViewModel
 import com.youth.banner.BannerConfig
 import com.youth.banner.Transformer
@@ -65,7 +67,18 @@ class HomeFragment : BaseVmFragment<CommonViewModel>(), OnItemClickListener {
     }
 
     override fun onItemClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
-
+        val item = mAdapter.getItem(position)
+        item.entries.forEach {
+            when(it.value){
+                getString(R.string.ic1)->{
+                    val intent =  Intent(getActivity(), DisListActivity::class.java)
+                    startActivity(intent)
+                }
+                getString(R.string.ic2)->{
+                    Toast.makeText(getActivity(),it.value,Toast.LENGTH_LONG).show()
+                }
+            }
+        }
     }
 
     /**

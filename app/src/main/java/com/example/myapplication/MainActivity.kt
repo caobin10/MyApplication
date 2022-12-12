@@ -6,10 +6,10 @@ import androidx.fragment.app.Fragment
 import com.demo.test.base.BaseViewModel
 import com.example.myapplication.base.BaseVmActivity
 import com.example.myapplication.common.ScrollToTop
-import com.example.myapplication.ui.HomeFragment
-import com.example.myapplication.ui.Fragment2
-import com.example.myapplication.ui.Fragment3
-import com.example.myapplication.ui.Fragment4
+import com.example.myapplication.ui.fragment.HomeFragment
+import com.example.myapplication.ui.fragment.Fragment2
+import com.example.myapplication.ui.fragment.Fragment3
+import com.example.myapplication.ui.fragment.Fragment4
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import kotlinx.android.synthetic.main.activity_main.*
 import q.rorbin.badgeview.QBadgeView

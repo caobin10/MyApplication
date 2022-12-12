@@ -1,4 +1,4 @@
-package com.example.myapplication.ui
+package com.example.myapplication.ui.fragment
 
 import com.demo.test.base.BaseFragment
 import com.example.myapplication.R
