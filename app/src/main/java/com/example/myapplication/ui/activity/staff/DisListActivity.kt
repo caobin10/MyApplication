@@ -3,12 +3,12 @@ package com.example.myapplication.ui.activity.staff
 import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.OnItemClickListener
-import com.example.myapplication.factory.DaoFactory
 import com.example.myapplication.R
 import com.example.myapplication.SitCode
 import com.example.myapplication.adapter.DisListAdapter
 import com.example.myapplication.base.BaseVmCommonActivity
 import com.example.myapplication.dao.SitCodeDao
+import com.example.myapplication.factory.DaoFactory
 import kotlinx.android.synthetic.main.activity_dis_list.*
 import kotlinx.android.synthetic.main.toolbar.*
 
@@ -26,6 +26,7 @@ class DisListActivity: BaseVmCommonActivity() ,OnItemClickListener{
     override fun initView() {
         tvHeaderTitle.text = getString(R.string.ic1)
         mRecyclerView.adapter = mAdapter
+        setLoadMoreAdapter(mAdapter)
     }
 
     override fun initData(){
@@ -57,7 +58,8 @@ class DisListActivity: BaseVmCommonActivity() ,OnItemClickListener{
     private fun loadOffLineDatas() {
         val query = DaoFactory.daoFactory.getSitCodeDao().queryBuilder().orderAsc(SitCodeDao.Properties.Code).build()
         val list: List<SitCode> = query.list()
-        val list2: List<SitCode> = query.list()
+        loadMoreResult(getData,mList,mAdapter)
+
     }
 
     override fun onItemClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {

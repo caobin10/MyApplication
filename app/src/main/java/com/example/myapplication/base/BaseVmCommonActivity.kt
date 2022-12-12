@@ -1,23 +1,9 @@
 package com.example.myapplication.base
 
 import android.os.Bundle
-import android.util.Xml
-import android.view.View
-import android.widget.Button
-import android.widget.ProgressBar
-import android.widget.TextView
-import androidx.constraintlayout.helper.widget.Layer
-import androidx.lifecycle.ViewModelProvider
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.classic.common.MultipleStatusView
-import kotlinx.coroutines.GlobalScope
-import okhttp3.ResponseBody
-import q.rorbin.badgeview.QBadgeView
-import zlc.season.downloadx.core.DownloadTask
-import java.io.File
-import java.io.InputStream
-import java.io.OutputStream
 
 abstract class BaseVmCommonActivity : BaseActivity() {
 //    private lateinit var downloadTask: DownloadTask
@@ -69,11 +55,13 @@ abstract class BaseVmCommonActivity : BaseActivity() {
 //        // 因为Activity恢复后savedInstanceState不为null，
 //        // 重新恢复后会自动从ViewModel中的LiveData恢复数据，
 //        // 不需要重新初始化数据。
-//        if (savedInstanceState == null) {
+        if (savedInstanceState == null) {
             initData()
-//        }
+        }
 //
-//        mLayoutStatusView?.setOnClickListener { initData() }
+        mLayoutStatusView?.setOnClickListener {
+            initData()
+        }
 //
 //        checkUpdate()
     }
@@ -132,60 +120,56 @@ abstract class BaseVmCommonActivity : BaseActivity() {
 //    /**
 //     * 加载更多适配
 //     */
-//    fun <T> setLoadMoreAdapter(mAdapter: BaseQuickAdapter<T, BaseViewHolder>) {
+    fun <T> setLoadMoreAdapter(mAdapter: BaseQuickAdapter<T, BaseViewHolder>) {
 //        //设置加载更多
-//        mAdapter.loadMoreModule.setOnLoadMoreListener {
-//            offset += limit
-//            initData()
-//        }
-//        mAdapter.loadMoreModule.isAutoLoadMore = true
+        mAdapter.loadMoreModule.setOnLoadMoreListener {
+            offset += limit
+            initData()
+        }
+        mAdapter.loadMoreModule.isAutoLoadMore = true
 //        //当自动加载开启，同时数据不满一屏时，是否继续执行自动加载更多(默认为true)
-//        mAdapter.loadMoreModule.isEnableLoadMoreIfNotFullPage = false
-//    }
+        mAdapter.loadMoreModule.isEnableLoadMoreIfNotFullPage = false
+    }
 //
 //
 //    /**
 //     * 加载更多结束
 //     */
-//    fun <T> loadMoreResult(
-//        getData: GetData?,
-//        data: List<T>,
-//        mAdapter: BaseQuickAdapter<T, BaseViewHolder>
-//    ) {
-//        mLayoutStatusView?.showContent()
-//        getData?.let {
-//            if (it.isSuccess) {
-//                if (data.isEmpty() && offset == 0) {
-//                    mLayoutStatusView?.showEmpty()
-//                } else {
-//                    if (offset == 0) {
-//                        mLayoutStatusView?.showContent()
-//                        mAdapter.setList(data)
-//                    } else {
-//                        mAdapter.addData(data)
-//                    }
-//
-//                    if (data.size < limit) {
-//                        //如果s少于20,显示没有更多数据布局
-//                        val isLoadEndMoreGone = (offset == 0)
-//                        mAdapter.loadMoreModule.loadMoreEnd(isLoadEndMoreGone)
-//                    } else {
-//                        mAdapter.loadMoreModule.loadMoreComplete()
-//                    }
-//                }
-//
-//                if (it.extra.isNotEmpty()) {
-//                    val count = (it.extra).toInt()
-//                    myAcetInput?.let {
-//                        badgeView.bindTarget(it).setBadgeNumber(count).isExactMode = true
-//                    }
-//                }
-//
-//            } else {
+    fun <T> loadMoreResult(getData: GetData?,data: List<T>, mAdapter: BaseQuickAdapter<T, BaseViewHolder>) {
+        mLayoutStatusView?.showContent()
+        getData?.let {
+            if (it.isSuccess) {
+                if (data.isEmpty() && offset == 0) {
+                    mLayoutStatusView?.showEmpty()
+                } else {
+                    if (offset == 0) {
+                        mLayoutStatusView?.showContent()
+                        mAdapter.setList(data)
+                    } else {
+                        mAdapter.addData(data)
+                    }
+
+                    if (data.size < limit) {
+                        //如果s少于20,显示没有更多数据布局
+                        val isLoadEndMoreGone = (offset == 0)
+                        mAdapter.loadMoreModule.loadMoreEnd(isLoadEndMoreGone)
+                    } else {
+                        mAdapter.loadMoreModule.loadMoreComplete()
+                    }
+                }
+
+                if (it.extra.isNotEmpty()) {
+                    val count = (it.extra).toInt()
+                    myAcetInput?.let {
+                        badgeView.bindTarget(it).setBadgeNumber(count).isExactMode = true
+                    }
+                }
+
+            } else {
 //                myToast(it.message)
-//            }
-//        }
-//    }
+            }
+        }
+    }
 //
 //    /**
 //     * 加载结束
