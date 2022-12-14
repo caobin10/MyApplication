@@ -135,41 +135,41 @@ abstract class BaseVmCommonActivity : BaseActivity() {
 //    /**
 //     * 加载更多结束
 //     */
-    fun <T> loadMoreResult(getData: GetData?,data: List<T>, mAdapter: BaseQuickAdapter<T, BaseViewHolder>) {
-        mLayoutStatusView?.showContent()
-        getData?.let {
-            if (it.isSuccess) {
-                if (data.isEmpty() && offset == 0) {
-                    mLayoutStatusView?.showEmpty()
-                } else {
-                    if (offset == 0) {
-                        mLayoutStatusView?.showContent()
-                        mAdapter.setList(data)
-                    } else {
-                        mAdapter.addData(data)
-                    }
-
-                    if (data.size < limit) {
-                        //如果s少于20,显示没有更多数据布局
-                        val isLoadEndMoreGone = (offset == 0)
-                        mAdapter.loadMoreModule.loadMoreEnd(isLoadEndMoreGone)
-                    } else {
-                        mAdapter.loadMoreModule.loadMoreComplete()
-                    }
-                }
-
-                if (it.extra.isNotEmpty()) {
-                    val count = (it.extra).toInt()
-                    myAcetInput?.let {
-                        badgeView.bindTarget(it).setBadgeNumber(count).isExactMode = true
-                    }
-                }
-
-            } else {
-//                myToast(it.message)
-            }
-        }
-    }
+//    fun <T> loadMoreResult(getData: GetData?,data: List<T>, mAdapter: BaseQuickAdapter<T, BaseViewHolder>) {
+//        mLayoutStatusView?.showContent()
+//        getData?.let {
+//            if (it.isSuccess) {
+//                if (data.isEmpty() && offset == 0) {
+//                    mLayoutStatusView?.showEmpty()
+//                } else {
+//                    if (offset == 0) {
+//                        mLayoutStatusView?.showContent()
+//                        mAdapter.setList(data)
+//                    } else {
+//                        mAdapter.addData(data)
+//                    }
+//
+//                    if (data.size < limit) {
+//                        //如果s少于20,显示没有更多数据布局
+//                        val isLoadEndMoreGone = (offset == 0)
+//                        mAdapter.loadMoreModule.loadMoreEnd(isLoadEndMoreGone)
+//                    } else {
+//                        mAdapter.loadMoreModule.loadMoreComplete()
+//                    }
+//                }
+//
+//                if (it.extra.isNotEmpty()) {
+//                    val count = (it.extra).toInt()
+//                    myAcetInput?.let {
+//                        badgeView.bindTarget(it).setBadgeNumber(count).isExactMode = true
+//                    }
+//                }
+//
+//            } else {
+////                myToast(it.message)
+//            }
+//        }
+//    }
 //
 //    /**
 //     * 加载结束

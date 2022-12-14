@@ -58,7 +58,7 @@ class DisListActivity: BaseVmCommonActivity() ,OnItemClickListener{
     private fun loadOffLineDatas() {
         val query = DaoFactory.daoFactory.getSitCodeDao().queryBuilder().orderAsc(SitCodeDao.Properties.Code).build()
         val list: List<SitCode> = query.list()
-        loadMoreResult(getData,mList,mAdapter)
+//        loadMoreResult(getData,mList,mAdapter)
 
     }
 
