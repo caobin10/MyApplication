@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.classic.common.MultipleStatusView
+import com.example.myapplication.ui.common.CommonViewModel
 
 abstract class BaseVmCommonActivity : BaseActivity() {
 //    private lateinit var downloadTask: DownloadTask
@@ -12,7 +13,7 @@ abstract class BaseVmCommonActivity : BaseActivity() {
 //    private lateinit var dialog: Layer
 //    private var version: Version? = null
 //    protected var submitDialog: DialogLayer? = null
-//    protected open lateinit var mViewModel: CommonViewModel
+    protected open lateinit var mViewModel: CommonViewModel
 //
 //    protected var tvUnit: UnitView? = null
 //    protected var myAcetInput: ClearEditText? = null

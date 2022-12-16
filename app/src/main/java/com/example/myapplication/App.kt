@@ -1,12 +1,12 @@
 package com.example.myapplication
 
-import android.app.Application
 import android.content.Context
+import androidx.multidex.MultiDexApplication
 import com.example.myapplication.File.AppUtils
 
-class MyApplication : Application() {
+class App : MultiDexApplication() {
     companion object {
-        lateinit var instance: MyApplication
+        lateinit var instance: App
         lateinit var context: Context
         lateinit var dbName: String
     }

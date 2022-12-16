@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">测试</string>
+<!--    <string name="app_name">测试</string>-->
 
     <string name="ic1">测试1</string>
     <string name="ic2">测试2</string>
@@ -18,4 +18,8 @@
     <string name="network_connection_failed">网络连接失败</string>
     <string name="loading">加载中...</string>
     <string name="data_error">数据获取失败(ㄒoㄒ)~~</string>
+    <string name="disAgree">\u3000\u3000进入应用前，您需要先同意《隐私服务政策》，否则将退出应用。</string>
+
+    <string name="network_request_timeout">网络请求超时</string>
+    <string name="api_data_parse_error">数据解析错误</string>
 </resources>

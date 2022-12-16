@@ -4,11 +4,8 @@ import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.example.myapplication.R
-import com.example.myapplication.SitCode
 import com.example.myapplication.adapter.DisListAdapter
 import com.example.myapplication.base.BaseVmCommonActivity
-import com.example.myapplication.dao.SitCodeDao
-import com.example.myapplication.factory.DaoFactory
 import kotlinx.android.synthetic.main.activity_dis_list.*
 import kotlinx.android.synthetic.main.toolbar.*
 
@@ -32,7 +29,7 @@ class DisListActivity: BaseVmCommonActivity() ,OnItemClickListener{
     override fun initData(){
         super.initData()
 //        loadOffLineDatas(getSql(), offset, limit)
-        loadOffLineDatas()
+//        loadOffLineDatas()
     }
 
 //    private fun getSql() = with(StringBuffer()){
@@ -56,8 +53,8 @@ class DisListActivity: BaseVmCommonActivity() ,OnItemClickListener{
 //    }
 
     private fun loadOffLineDatas() {
-        val query = DaoFactory.daoFactory.getSitCodeDao().queryBuilder().orderAsc(SitCodeDao.Properties.Code).build()
-        val list: List<SitCode> = query.list()
+//        val query = DaoFactory.daoFactory.getSitCodeDao().queryBuilder().orderAsc(SitCodeDao.Properties.Code).build()
+//        val list: List<SitCode> = query.list()
 //        loadMoreResult(getData,mList,mAdapter)
 
     }
