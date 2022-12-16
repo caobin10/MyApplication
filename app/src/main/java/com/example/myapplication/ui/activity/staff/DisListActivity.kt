@@ -11,6 +11,8 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 class DisListActivity: BaseVmCommonActivity() ,OnItemClickListener{
 
+    //xxxxxxxxxxxxxxxxxx
+
     private var whereSQL:String?=""
 
     private val mAdapter by lazy {
