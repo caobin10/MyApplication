@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 class DisListActivity: BaseVmCommonActivity() ,OnItemClickListener{
 
-    //xxxxxxxxxxxxxxxxxx
+    //xxxxxxxxxxxxxxxxxx kkkkkkkkkkkkkk
 
     private var whereSQL:String?=""
 
